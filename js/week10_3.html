@@ -1,0 +1,31 @@
+<!-- 객체노드들이 트리모양으로 구성됨 기말고사 시험문제제출-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .value{
+            color : blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>object key value</h1>
+</body>
+<script>
+    let obj = document;
+    let count = 1;
+
+    
+
+    for(let key in obj){
+        document.write(`${count}. <B>[${key}]</B>: <span class="value">${obj[key]}</span> <hr>`);
+        count++;
+    }
+
+</script>
+</html>
