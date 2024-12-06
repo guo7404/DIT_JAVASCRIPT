@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseEvent</title>
+    <style>
+        div{
+            font-weight: bold;
+            border: 3px solid black;
+            padding: 30px;
+            width: 70%;
+        }
+        .divid{
+            border: 1px solid gray;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        function MouseEnter(){
+            this.style.borderColor = "blue";
+            document.getElementById("eventLog").innerHTML += `들어옴! <span class="divid">${this.id}</span><br>`;
+        }
+        function mouseLeave(){
+            this.style.borderColor = "black";
+            document.getElementById("eventLog").innerHTML += `나감! <span class="divid">${this.id}</span><br>`;
+        }
+        function attachDivEventHandler(){
+            let divList = document.getElementsByTagName("div");
+            for(let div of divList){
+                div.addEventListener("mouseenter",MouseEnter);
+                div.addEventListener("mouseleave",mouseLeave);
+            }
+        }
+        window.onload = function(){
+            attachDivEventHandler();
+        }
+    </script>
+</head>
+<body>
+    <h1>mouseEvent : MouseOver vs MouseEnter</h1>
+    <hr>
+    <div id="divA">division A
+        <div id="divB">division B
+            <div id="divC">division C
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h2>Log</h2>
+    <p id="eventLog"></p>
+</body>
+</html>

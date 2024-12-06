@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <style>
+        .icon{
+            width: 80px;
+            margin-right: 30px;
+        }
+        #mainImage{
+            width: 400px;
+        }
+    </style>
+    <script>
+        let changeImg = "image/facebook.png";
+        let changeInner = "-";
+        // icon image 위에 마우스가 올라오면 mainImage에 자신의 src값을 복사해주는 이벤트 핸들러
+        function postMyImage(){
+            document.querySelector("#mainImage").src = this.src;
+            document.querySelector("#mainTitle").innerHTML = this.alt;
+        }
+        //icon image에서 마우스가 벗어나면 mainImage에 기본 이미지 설정한다.
+        function resetMyImage(){
+            document.querySelector("#mainImage").src = changeImg; //변수로
+            document.querySelector("#mainTitle").innerHTML = changeInner;
+        }
+        //icon image를 클릭하면 해당이미지를 mainImage의 기본이미지로 설정한다.
+        function fixMyImage(){
+            changeImg = this.src;
+            changeInner = this.alt;
+        }
+
+        //class가 "icon"인 img 태그들을 가져와서 위의 postMyImage 이벤트핸들러를 차례대로 연결한다.
+        function addPostMyImage(){
+            let iconList = document.getElementsByClassName("icon");
+            for(let icon of iconList){
+                icon.addEventListener("mouseover",postMyImage);
+                icon.addEventListener("mouseout",resetMyImage);
+                icon.addEventListener("click",fixMyImage);
+            }
+        }
+        window.onload = function(){
+            addPostMyImage();
+        }
+    </script>
+</head>
+<body>
+    <h1>이미지 뷰어</h1>
+    <hr>
+    <div style="text-align: center;">
+        <img id="mainImage" src="image/facebook.png" >
+        <p id="mainTitle">-</p>
+    </div>
+    <hr>
+    <div style="text-align: center;">
+    <img src="image/facebook.png" alt="페이스북" class="icon">
+    <img src="image/instergram.png" alt="인스타그램" class="icon">
+    <img src="image/twitter.png" alt="트위터" class="icon">
+    <img src="image/whatsapp.png" alt="왓스앱" class="icon">
+    <img src="image/youtube.png" alt="유튜브" class="icon">
+    </div>
+    <hr>
+</body>
+</html>
