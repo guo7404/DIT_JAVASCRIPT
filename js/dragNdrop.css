@@ -13,10 +13,17 @@
     width: 50vw;
 }
 
+.overBox{
+    background-color: aquamarine;
+}
+
 .menu {
     height: 100px;
     background-color: red;
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
+}
+.draggingMenu{
+    border-color: blue;
 }
