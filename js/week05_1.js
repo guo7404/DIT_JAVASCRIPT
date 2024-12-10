@@ -1,3 +1,4 @@
+//매개변수 초기화
 function welcome(guest="손",host="홍길동"){
     return console.log(`어서오세요. ${guest}님. 저는 ${host}입니다.`);
 }

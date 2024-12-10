@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Kiosk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="kiosk-container">
+        <div class="menu-area" id="menuArea">
+            <!-- Menu items will be dynamically added here -->
+        </div>
+        
+        <div class="cart-area" id="cartArea">
+            <h2>장바구니</h2>
+            <div id="cartItems"></div>
+            <div class="cart-summary">
+                <p>총 금액: <span id="totalAmount">0</span>원</p>
+                <button id="payButton">결제</button>
+            </div>
+        </div>
+
+        <div class="admin-area" id="adminArea">
+            <h2>관리자 메뉴</h2>
+            <button id="addMenuBtn">메뉴 추가</button>
+            <button id="viewSalesBtn">판매 내역</button>
+            <button id="resetSalesBtn">판매 내역 초기화</button>
+        </div>
+
+        <div id="receiptModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="receiptContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="kiosk.js"></script>
+</body>
+</html>
