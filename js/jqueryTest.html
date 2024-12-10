@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnHide").click(function(){
+                $("h2").fadeOut();
+            })
+            //-----------------------------------
+            $("#btnShow").click(function(){
+                $("h2").fadeIn();
+            })
+            //-------------------------------
+            $("#btnToggle").click(function(){
+                $("h2").fadeToggle();
+            })
+            $("h2").click(function(){
+                $(this).fadeTo(500, 0.5,function(){
+                    $(this).fadeTo(100, 1);
+                });
+            })
+        });
+        //-----------------------------------
+    </script>
+    <title>jQuery Test</title>
+</head>
+
+<body>
+    <h1>JQuery Test</h1>
+    <hr>
+    <button id="btnHide">Hide</button>
+    <button id="btnShow">Show</button>
+    <button id="btnToggle">Toggle</button>
+    <h2>JQuery Test</h2>
+    <h2>JQuery Effect(Hide/Show) Test</h2>
+    
+</body>
+
+</html>
