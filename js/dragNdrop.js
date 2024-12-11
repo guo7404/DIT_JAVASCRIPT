@@ -17,6 +17,9 @@ function onDragEndMenu(event){
     draggingMenu = null; //더이상 드래깅중인 객체가 없음으로 설정
     this.classList.remove('draggingMenu'); //드래깅 중인 객체임을 표시
     document.querySelector('p').innerHTML += `Ended ${$(this).attr("menuname")} Dragging<br>`;
+    if(dragOverBox!==null){
+        dragOverBox.classList.remove('overBox');
+    }
 }
 
 //===========================================
