@@ -1,14 +1,16 @@
-let sumPrice = 0;
-
-
+let totalPrice = 0;
 
 $(document).ready(function() {
     $("#managerBtn").click(function() {
         $("#managerMenu").slideToggle();
     });
 
-    $("#cartButton").click(function() {
-        alert(`${sumPrice}원 결제완료!`);
+    $("#checkBtn").click(function() {
+        alert(`${totalPrice}원 결제완료!`);
+        location.reload();
+    });
+
+    $("#cancelBtn").click(function() {
         location.reload();
     });
 });
